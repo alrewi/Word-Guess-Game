@@ -1,0 +1,73 @@
+<!--
+
+Girly Country and Western Word Guess Game
+
+Game Display:
+-Title
+    CODE: html and css (bootstrap?)
+
+-Playback area
+    CODE: html/css and js
+    -Song title/Artist
+    -Picture
+    -Song plays upon opening the page, artist's picture and song info displays
+    -Song by the artist guessed plays during the next game, with picture and song info displayed
+
+-Game Area
+    CODE: html/css and js
+    -Blank spaces for the word
+        -Originally blank, fill in as correct guesses are made
+        -Number of spaces changes depending on the word
+    -Guessed letters
+        -Graveyard of incorrect guesses
+    -Guesses remaining
+        -Counter goes down with each guess
+    -Wins/Losses
+        -Counter keeps track of number of wins or losses
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HangMan</title>
+    <link type="text/javascript" href="assets/javascript/hangman.js">
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Sacramento|Shrikhand" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>HangMan</h1>
+        <h3>Country-Style</h3>
+        <div class="playback-area">
+            <div class="artist-image">
+                Pictures
+            </div>
+            <div class="song-info">
+                Songs
+            </div>
+        </div>
+        <div class="game-area">
+            <div class="underscores">
+                _ _ _ _ _ _ _ _ _
+            </div>
+            <div class="graveyard">
+                Already tried these ones, cowboy
+            </div>
+            <div class="guessesRemaining">
+                Number of tries left, y'all
+            </div>
+            <div class="wins">
+                Yeehaws!
+            </div>
+            <div class="losses">    
+                Dagnabits
+            </div>
+        </div>
+    </div>
+</body>
+</html>

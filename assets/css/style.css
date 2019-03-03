@@ -1,0 +1,57 @@
+
+body{
+    background-color: pink;
+}
+.container {
+    height: 100%;
+    width: 100%;
+    background-color: pink;
+}
+h1 {
+    font-size: 60px;
+    font-family: 'Shrikhand', cursive;
+    padding: 1% 0 1% 3%;
+}
+h3 {
+    font-size: 40px;
+    font-family: 'Shrikhand', cursive;
+    padding: 0 0 1% 3%;
+}
+.playback-area {
+    height: 363px;
+    width: 653px;
+    float: left;
+    background-color: pink;
+    background-image: url("../images/dune_landscape_emprty.png");
+    background-size: cover;
+    font-family: 'Sacramento', cursive;
+    font-size: 40px;
+    position: relative;
+    margin: 0 3% 0 3%;
+}
+.artist-image {
+    height: 150px;
+    width: 100px;
+    float: right;
+    margin: 84px 0 84px 0;
+}
+.song-info {
+    height: 20%;
+    width: 100%;
+    float: left;
+    position: absolute;
+    bottom: 0;
+}
+.game-area {
+    height: 648px;
+    width: 400px;
+    float: left;
+    background-color: pink;
+    background-image: url("../images/grd3.png");
+    background-size: cover;
+    font-family: 'Sacramento', cursive;
+    font-size: 40px;
+}
+
+/* 
+ */
