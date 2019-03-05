@@ -6,42 +6,51 @@ body{
     height: 100%;
     width: 100%;
     background-color: pink;
+    position: relative;
+}
+
+
+header {
+    width: 100%;
+    text-align: center;
+}
+h1, h3 {
+    color: #873416;
+    font-family: 'Shrikhand', cursive;
 }
 h1 {
     font-size: 60px;
-    font-family: 'Shrikhand', cursive;
     padding: 1% 0 1% 3%;
 }
 h3 {
     font-size: 40px;
-    font-family: 'Shrikhand', cursive;
     padding: 0 0 1% 3%;
 }
-.playback-area {
-    height: 363px;
-    width: 653px;
-    float: left;
-    background-color: pink;
-    background-image: url("../images/dune_landscape_emprty.png");
-    background-size: cover;
-    font-family: 'Sacramento', cursive;
-    font-size: 40px;
-    position: relative;
-    margin: 0 3% 0 3%;
+
+
+
+
+.row {
+    display: flex;
+    flex-wrap: flex;
 }
-.artist-image {
-    height: 150px;
-    width: 100px;
-    float: right;
-    margin: 84px 0 84px 0;
+.column {
+    display: flex;
 }
-.song-info {
-    height: 20%;
+h2 {
+    font-size: 50px;
+}
+h4 {
+    font-size: 30px;
+}
+h2, h4 {
+    text-align: center;
+    line-height: 1.5;
     width: 100%;
-    float: left;
-    position: absolute;
-    bottom: 0;
 }
+
+
+
 .game-area {
     height: 648px;
     width: 400px;
@@ -50,8 +59,55 @@ h3 {
     background-image: url("../images/grd3.png");
     background-size: cover;
     font-family: 'Sacramento', cursive;
-    font-size: 40px;
+    font-weight: bold;
+    color: white;
+    display: flex;   
+    flex-wrap: wrap;
+    position: absolute;
+}
+#currentWord {
+    letter-spacing: 5px;
+    font-size: 50px;
+}
+#guessedLetters {
+    font-size: 20px;
+}
+#currentWord, #guessedLetters {
+    font-family: 'Shrikhand', cursive;
 }
 
-/* 
- */
+
+
+.desert {
+    height: 318px;
+    width: 590px;
+    float: left;
+    background-color: pink;
+    background-image: url("../images/dune_landscape_emprty.png");
+    background-size: cover;
+    position: absolute;
+    right:80px;
+    margin: 0 3% 0 3%;
+    font-family: 'Sacramento', cursive;
+    color: purple;
+    font-size: 40px;
+    text-align: center;
+}
+.cactus1 {
+    position: absolute;
+    top: 69%;
+    left: 1%;
+}
+.cactus2 {
+    position: absolute;
+    top: 61%;
+    right: 1%;
+}
+.skull {
+    position: absolute;
+    bottom: 6%;
+    right: 51%;
+}
+#pressKeyToStart, #youWin, #youLose {
+    padding-top: 118px;
+}

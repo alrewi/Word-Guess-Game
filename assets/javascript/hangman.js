@@ -1,53 +1,49 @@
-// var audio = new Audio('audio_file.mp3');
-// audio.play();
-
-// underscores populate, # depends on random artist chosen
-// user guesses a letter--
-//     if not a letter, error Message  
-//     if capitilized, make lower case
-//     if correct letter appears in place of underscore 
-//     if incorrect letter appears in graveyard
-//     if already guessed that letter nothing happens or error
-// number of tries decreases by 1 each (valid) letter guessed
-// if word guessed correctly in fewer than 10 tries, user wins
-//     number of wins increases by 1
-//     image of artist appears
-//     song plays
-//     new game begins
-
+  
+//Create an array to store our word options
 var artists =          
     [
-        "kacey musgraves",
-        "margo price",
-        "nikki lane"
+        "dolly",
+        "loretta",
+        "emmylou",
+        "tammy",
+        "patsy",
+        "kitty",
+        "wynonna",
+        "tanya",
+        "june",
+        "lynn"
     ];
-
-const maxTries = 10;            
-
-var guessedLetters = [];        
-var currentWordIndex;           
-var guessingWord = [];          
-var remainingGuesses = 0;       
+//Create a variable to store the index of the word from the artists' array
+var currentWordIndex;
+//Create an array to store the letters of the word being guessed           
+var currentWord = [];       
+//Create an array to store the letters that have been guessed already
+var guessedLetters = [];  
+//Create a variable to store the maximum number of wrong guesses allowed
+const maxGuesses = 15;       
+//Create a variable to store the number remaining guesses
+var remainingGuesses = 0;
+//Create a variable to store the number of wins
+var wins = 0;   
+//Create a variable         
 var gameStarted = false;        
 var hasFinished = false;            
-var wins = 0;                   
+//Run resetGame and updateDisplay functions to start 
+resetGame();
+updateDisplay();
 
 function resetGame() {
-    remainingGuesses = maxTries;
     gameStarted = false;    
     
     currentWordIndex = Math.floor(Math.random() * (artists.length));
     
-    guessesLetters = [];
-    guessingWord = [];
+    remainingGuesses = maxGuesses;
+    guessedLetters = [];
+    currentWord = [];
 
     for (var i = 0; i < artists[currentWordIndex].length; i++) {
-        guessingWord.push("_");
+        currentWord.push("_");
     }
-
-    document.getElementById("pressKeyTryAgain").style.cssText = "display: none";
-    document.getElementById("gameover-image").style.cssText = "display: none";
-    document.getElementById("youwin-image").style.cssText = "display: none";
 
     updateDisplay();
 }
@@ -55,18 +51,18 @@ function resetGame() {
 function updateDisplay() {
     document.getElementById("totalWins").innerText = wins;
     document.getElementById("currentWord").innerText = "";
-    for (var i = 0; i < guessingWord.length; i++) {
-        document.getElementById("currentWord").innerText += guessingWord[i];
+    for (var i = 0; i < currentWord.length; i++) {
+        document.getElementById("currentWord").innerText += currentWord[i];
     }
     document.getElementById("remainingGuesses").innerText = remainingGuesses;
     document.getElementById("guessedLetters").innerText = guessedLetters;
+    document.getElementById("youWin").style.display = 'none';
+    document.getElementById("youLose").style.display = 'none';
+    document.getElementById("pressKeyToStart").style.display = '';
     if(remainingGuesses <= 0) {
-        document.getElementById("gameover-image").style.cssText = "display: block";
-        document.getElementById("pressKeyTryAgain").style.cssText = "display: block";
-        hasFininshed = true;
+        document.getElementById("youLose").style.display = '';
+        hasFinished = true;
     }
-
-
 }
     
 document.onkeydown = function(event) {
@@ -76,12 +72,13 @@ document.onkeydown = function(event) {
     } else {
         if (event.keyCode >= 65 && event.keyCode <= 90) {
             makeGuess(event.key.toLowerCase());
+            document.getElementById("pressKeyToStart").style.display = "none";
         }
     }
 }
 
 function makeGuess(letter) {
-    if (remainigGuesses > 0) {
+    if (remainingGuesses > 0) {
         if (!gameStarted) {
             gameStarted = true;
         }
@@ -107,20 +104,19 @@ function evaluateGuess(letter) {
         remainingGuesses--;
     } else {
         for(var i = 0; i < positions.length; i++) {
-            guessingWord[positions[i]] = letter;
+            currentWord[positions[i]] = letter;
         }
     }
 };
 
 function checkWin() {
-    if(guessingWord.indexOf("_") === -1) {
-        document.getElementById("youwin-image").style.cssText = "display: block";
-        document.getElementById("pressKeyTryAgain").style.cssText= "display: block";
+    if(currentWord.indexOf("_") === -1) {
         wins++;
         hasFinished = true;
+        document.getElementById("youWin").style.display = "";
     }
 };
 
-    
+
 
  

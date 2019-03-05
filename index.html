@@ -1,31 +1,3 @@
-<!--
-
-Girly Country and Western Word Guess Game
-
-Game Display:
--Title
-    CODE: html and css (bootstrap?)
-
--Playback area
-    CODE: html/css and js
-    -Song title/Artist
-    -Picture
-    -Song plays upon opening the page, artist's picture and song info displays
-    -Song by the artist guessed plays during the next game, with picture and song info displayed
-
--Game Area
-    CODE: html/css and js
-    -Blank spaces for the word
-        -Originally blank, fill in as correct guesses are made
-        -Number of spaces changes depending on the word
-    -Guessed letters
-        -Graveyard of incorrect guesses
-    -Guesses remaining
-        -Counter goes down with each guess
-    -Wins/Losses
-        -Counter keeps track of number of wins or losses
-
--->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -34,37 +6,56 @@ Game Display:
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>HangMan</title>
-    <link type="text/javascript" href="assets/javascript/hangman.js">
-    <link rel="stylesheet" href="assets/css/reset.css">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
+        crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Sacramento|Shrikhand" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
     <div class="container">
-        <h1>HangMan</h1>
-        <h3>Country-Style</h3>
-        <div class="playback-area">
-            <div class="artist-image">
-                Pictures
+        <header>
+            
+            <h1><img src="assets/images/Horse_Shoe.png" height=69px width=50px>HangMan<img src="assets/images/Horse_Shoe.png" height=69px width=50px></h1>
+            
+            <h3>Country-Style</h3>
+        </header>
+        <div class="row">
+            <div class="column col-lg-4">
+                <div class="game-area">
+                    <h2 id="gameName">Guess this Honky Tonk Angel's name</h4>
+                    <br><br>
+                    <h4 id="currentWord"></h4>
+                    <br><br>
+                    <h4 id ="remainingGuessText">This many tries left, y'all:</h4>
+                    <br>
+                    <h4 id="remainingGuesses"></h4>
+                    <br><br>
+                    <h4 id="guessedLettersText">You already guessed these letters, cowboy:</h4>
+                    <br>
+                    <h4 id="guessedLetters"></h4>
+                    <br><br>
+                    <h4 id="winsText">Yeehaws!</h4>
+                    <br>
+                    <h4 id="totalWins"></h4>
+                </div>
             </div>
-            <div class="song-info">
-                Songs
-            </div>
-        </div>
-        <div class="game-area">
-            <div class="currentWord">
-                _ _ _ _ _ _ _ _ _
-            </div>
-            <div class="graveyard">
-                Already tried these ones, cowboy
-            </div>
-            <div class="guessesRemaining">
-                Number of tries left, y'all
-            </div>
-            <div class="wins">
-                Yeehaws!
+            <div class="column col-lg-8">
+                <div class="desert">
+                    <h2 id="pressKeyToStart">Press any key to get cookin', darlin'!</h2>
+                    <h2 id="youWin">That gal is a legend! Nice work, hass.</h2>
+                    <h2 id="youLose">What in tarnation?! Try again, honey.</h2>
+                    <img class="cactus1" src="assets/images/Cactus.png" height=100px width=125px>
+                    <img class="skull" src="assets/images/longhorn-skull.png" height=50px width=75px>
+                    <img class="cactus2" src="assets/images/Cactus.png" height=125px width=150px>
+                </div>
             </div>
         </div>
     </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+        crossorigin="anonymous"></script>
+    <script type="text/javascript" src="assets/javascript/hangman.js"></script>
 </body>
 </html>
